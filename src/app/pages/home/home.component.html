@@ -1,0 +1,7 @@
+<div class="home-page">
+    <h1>Főoldal - Kosárlabda Mérkőzések</h1>
+    <div *ngFor="let match of matches | async">
+      <app-match-card [match]="match"></app-match-card>
+    </div>
+  </div>
+  

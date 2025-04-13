@@ -1,0 +1,13 @@
+<div class="profile-page">
+    <h1>Profilom</h1>
+    <form [formGroup]="form">
+      <label for="name">Név:</label>
+      <input id="name" formControlName="name" type="text"/>
+  
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email"/>
+  
+      <button type="submit" [disabled]="form.invalid">Mentés</button>
+    </form>
+  </div>
+  

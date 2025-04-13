@@ -1,0 +1,121 @@
+.teams-page-container {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .teams-header {
+    margin-bottom: 32px;
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      color: #3f51b5;
+      display: flex;
+      align-items: center;
+      
+      .header-icon {
+        margin-right: 12px;
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+  
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  
+  .team-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    mat-card-header {
+      padding-top: 16px;
+    }
+    
+    mat-card-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1976d2; // Világosabb kék szín a csapat nevéhez
+    }
+    
+    mat-card-subtitle {
+      font-size: 14px;
+      color: #5c6bc0; // Világosabb lila/kék árnyalat a városhoz
+    }
+    
+    .team-avatar {
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .team-logo {
+      max-height: 180px;
+      object-fit: contain;
+      margin: 8px auto;
+    }
+    
+    mat-card-actions {
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      
+      button {
+        display: flex;
+        align-items: center;
+        
+        mat-icon {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+  
+  .no-teams {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
+    color: rgba(0, 0, 0, 0.5);
+    
+    mat-icon {
+      font-size: 48px;
+      height: 48px;
+      width: 48px;
+      margin-bottom: 16px;
+    }
+    
+    p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 599px) {
+    .teams-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .teams-header h1 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 959px) {
+    .teams-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

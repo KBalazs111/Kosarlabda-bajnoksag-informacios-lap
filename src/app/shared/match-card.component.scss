@@ -1,0 +1,60 @@
+.match-card {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+  
+    mat-card-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+  
+    mat-card-subtitle {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      margin-bottom: 0.5rem;
+    }
+  
+    mat-card-content {
+      font-size: 1rem;
+      color: #34495e;
+      p {
+        margin: 0.3rem 0;
+      }
+    }
+  
+    mat-card-actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-end;
+  
+      button {
+        font-weight: 500;
+        border-radius: 8px;
+      }
+    }
+  
+    @media (max-width: 600px) {
+      padding: 0.8rem;
+  
+      mat-card-title {
+        font-size: 1.2rem;
+      }
+  
+      mat-card-subtitle,
+      mat-card-content {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  

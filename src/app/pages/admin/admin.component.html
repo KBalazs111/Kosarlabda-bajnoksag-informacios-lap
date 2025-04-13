@@ -1,0 +1,31 @@
+
+<div class="admin-page">
+  <h1>Admin - Új Mérkőzés</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Hazai</mat-label>
+      <input matInput formControlName="homeTeam" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Vendég</mat-label>
+      <input matInput formControlName="awayTeam" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Dátum</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Helyszín</mat-label>
+      <input matInput formControlName="location" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Hozzáadás
+    </button>
+  </form>
+</div>

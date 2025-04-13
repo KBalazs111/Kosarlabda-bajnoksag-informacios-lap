@@ -1,0 +1,51 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>login</mat-icon>
+          Bejelentkezés
+        </mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <form #form="ngForm" (ngSubmit)="login()" class="login-form">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Felhasználónév</mat-label>
+            <input 
+              matInput 
+              name="username" 
+              [(ngModel)]="username" 
+              required
+              placeholder="Add meg a felhasználóneved"
+            >
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="form.controls['username']?.invalid && form.controls['username']?.touched">
+              Felhasználónév megadása kötelező
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Típus</mat-label>
+            <mat-select [(ngModel)]="role" name="role" required>
+              <mat-option value="user">Felhasználó</mat-option>
+              <mat-option value="admin">Admin</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>admin_panel_settings</mat-icon>
+          </mat-form-field>
+          
+          <div class="button-container">
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit" 
+              [disabled]="form.invalid"
+              class="login-button"
+            >
+              <mat-icon>login</mat-icon>
+              Belépés
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
